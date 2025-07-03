@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  kobo-flux:
+    image: fidelis/koboflux:0.0.10
+    ports:
+      - "81:8080"
+    environment:
+      - PORT=8080
+      # Add your environment variables here
+      - BASE_URL=${BASE_URL}
+      - API_TOKEN=${API_TOKEN}
+    volumes:
+      # Mount logs directory to persist logs
+      - ./logs:/app/logs
+      # Mount tmp directory for uploaded files
+      - ./tmp:/app/tmp
+    restart: unless-stopped 

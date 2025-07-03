@@ -42,7 +42,7 @@ class KoboAPI:
         The token is loaded from the environment variable 'API_TOKEN'.
         """
         token = os.getenv('API_TOKEN')
-        base_url = os.getenv('BASE_URL')    
+        base_url = os.getenv('BASE_URL')
         url = f"{base_url}{url}"
         if not token:
             raise ValueError("API_TOKEN not set in environment variables.")

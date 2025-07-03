@@ -24,7 +24,8 @@ class FileProcessor:
 
         Args:
             file_content (bytes): The file content as bytes
-            file_type (str): MIME type of the file (e.g., 'text/csv', 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
+            file_type (str): MIME type of the file (e.g., 'text/csv', 
+            'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet')
             original_filename (str, optional): Original filename for reference
 
         Returns:
@@ -80,14 +81,14 @@ class FileProcessor:
         finally:
             temp_file.close()
 
-    def format_for_nicegui_table(self, file_path: str, head_rows: int = 0):
+    def format_for_nicegui_table(self, file_path: str):
         """
         Format DataFrame data for NiceGUI table display.
-        
+
         Args:
             file_path (str): Path to the file
             head_rows (int): Number of rows to include (default: 5)
-            
+
         Returns:
             tuple: (columns_list, rows_list) formatted for NiceGUI table
         """
@@ -99,12 +100,11 @@ class FileProcessor:
             raise ValueError(f"Unsupported file type: {file_path}")
 
         # Get the csv columns
-        
+
         df_columns = df.columns.tolist()
 
         # Get the csv rows
         rows = df.to_dict(orient='records')
-
 
         # Format columns for NiceGUI table
         columns = []
@@ -136,7 +136,7 @@ class FileProcessor:
 
         return columns, rows
 
-    def process_csv(self, file_path: str, head_rows: int = 100):
+    def process_csv(self, file_path: str):
         """
         Process the CSV file.
 
@@ -159,7 +159,7 @@ class FileProcessor:
 
         return columns, body
 
-    def process_excel(self, file_path: str, head_rows: int = 100):
+    def process_excel(self, file_path: str):
         """
         Read Excel file and return head and body separately
 
@@ -179,6 +179,4 @@ class FileProcessor:
         body = df
 
         return columns, body
-
-
-    
+        
