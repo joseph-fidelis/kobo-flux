@@ -1,3 +1,8 @@
+> [!CAUTION]
+> **This project is deprecated and has been archived.**
+> 
+> Active development has moved to a new repository. Please visit **[KoboFlux v2](https://github.com/joseph-fidelis/kobo-flux-v2)** for the latest source code, releases, and issue tracking.
+
 # Kobo Flux Form Uploader
 
 A web application for uploading CSV/Excel files to Kobo Toolbox forms. Built with NiceGUI for a modern, responsive interface.
